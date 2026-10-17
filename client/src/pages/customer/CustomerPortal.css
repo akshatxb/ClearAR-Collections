@@ -1,0 +1,738 @@
+/* Customer Portal Modern B2B Design System */
+
+/* Credit Hold Resolution Banner */
+.portal-hold-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius-m, 12px);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  color: var(--ink);
+  margin-bottom: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.portal-hold-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.portal-hold-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .portal-hold-icon-wrap {
+  background: rgba(220, 38, 38, 0.2);
+  color: #f87171;
+}
+
+.portal-hold-heading {
+  font-weight: 700;
+  font-size: 14px;
+  color: #dc2626;
+  margin-bottom: 2px;
+}
+
+[data-theme="dark"] .portal-hold-heading {
+  color: #f87171;
+}
+
+.portal-hold-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.portal-hold-action-btn {
+  white-space: nowrap;
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-s, 8px);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.portal-hold-action-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* Executive Portal Hero Card (aligned with AccountDetail.css) */
+.portal-hero-card {
+  padding: 20px 24px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-m, 12px);
+  box-shadow: var(--shadow-xs);
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+.portal-hero-card[data-overdue="true"] {
+  border-left-color: var(--danger, #dc2626);
+}
+
+.portal-hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.portal-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portal-hero-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portal-account-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.portal-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portal-hero-issuer {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.portal-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portal-hero-actions .btn-action-item {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.portal-hero-actions .btn-action-danger {
+  background: var(--danger, #dc2626);
+  border-color: var(--danger, #dc2626);
+  color: #ffffff;
+}
+
+.portal-hero-actions .btn-action-danger:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+/* Contact Bar & Chips (aligned with AccountDetail.css) */
+.portal-contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.portal-hero-card .contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s, 6px);
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.portal-hero-card .contact-chip a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.portal-hero-card .contact-chip a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.portal-hero-card .contact-copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  color: var(--ink-soft);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.15s ease;
+  margin-left: 2px;
+}
+
+.portal-hero-card .contact-copy-btn:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+/* Standardized 3-Card KPI Metrics Grid */
+.portal-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 860px) {
+  .portal-kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.portal-stat-danger {
+  border-color: rgba(220, 38, 38, 0.35);
+  background: linear-gradient(180deg, var(--paper-raised) 0%, rgba(220, 38, 38, 0.03) 100%);
+}
+
+.portal-stat-sub {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.tag-danger {
+  background: #fff1f2;
+  color: #9f1239 !important;
+  border: 1px solid #fecdd3;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .tag-danger {
+  background: rgba(225, 29, 72, 0.16);
+  color: #fda4af !important;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  box-shadow: none;
+}
+
+/* Invoices Filter & Search Toolbar (consistent with Admin & Analytics) */
+.admin-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: var(--radius-m, 10px);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-xs);
+}
+
+.category-filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cat-chip:hover {
+  background: var(--paper-raised);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.cat-chip.active {
+  background: var(--accent-tint);
+  color: var(--accent);
+  border-color: var(--accent-tint-border);
+}
+
+.cat-chip-count {
+  font-size: 10.5px;
+  font-family: var(--font-mono);
+  opacity: 0.8;
+}
+
+/* Legacy aliases for backwards compatibility */
+.portal-table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.portal-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.portal-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.portal-filter-pill.is-active {
+  background: var(--accent-tint);
+  color: var(--accent);
+  border-color: var(--accent-tint-border);
+}
+.portal-filter-count {
+  font-size: 10.5px;
+  font-family: var(--font-mono);
+  opacity: 0.8;
+}
+
+/* Search Box */
+.admin-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 240px;
+  max-width: 380px;
+  flex: 1;
+}
+
+.admin-search-wrap .search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+.admin-search-input {
+  width: 100%;
+  height: 34px;
+  padding: 6px 30px 6px 30px;
+  font-size: 12.5px;
+  font-family: var(--font-ui);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--paper-raised);
+  color: var(--ink);
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.admin-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
+  outline: none;
+}
+
+.admin-search-wrap .search-clear-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-search-wrap .search-clear-btn:hover {
+  color: var(--ink);
+  background: var(--paper-subtle);
+}
+
+.admin-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.admin-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.admin-filter-select {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  height: 34px;
+  line-height: 1.4;
+  padding: 6px 34px 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background-color: var(--paper-raised);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+  box-shadow: var(--shadow-xs);
+  box-sizing: border-box;
+  min-width: 140px;
+}
+
+.admin-filter-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
+  outline: none;
+}
+
+.portal-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+}
+.portal-search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+.portal-search-input {
+  width: 100%;
+  padding: 6px 28px 6px 30px;
+  font-size: 12.5px;
+  border-radius: var(--radius-s, 8px);
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+.portal-search-clear {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+/* Row Action Buttons Group */
+.portal-actions-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.tbl-btn-pay {
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+}
+
+.tbl-btn-pay:hover {
+  background: var(--accent-hover, #0d5f57);
+  border-color: var(--accent-hover, #0d5f57);
+}
+
+.badge-overdue {
+  display: inline-flex;
+  align-items: center;
+  background: #fff1f2;
+  color: #9f1239 !important;
+  border: 1px solid #fecdd3;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full, 9999px);
+  margin-left: 6px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+[data-theme="dark"] .badge-overdue {
+  background: rgba(225, 29, 72, 0.16);
+  color: #fda4af !important;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+
+.portal-payment-method {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  padding: 2px 7px;
+  border-radius: var(--radius-s, 6px);
+}
+
+/* Stripe and Demo payment boxes */
+.stripe-card-element {
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s, 8px);
+  background: #ffffff;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.04));
+  transition: all 0.15s ease;
+}
+
+.stripe-card-element:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2.5px rgba(15, 118, 110, 0.18);
+}
+
+.portal-demo-pay-box {
+  padding: 14px;
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m, 12px);
+  margin-bottom: 16px;
+}
+
+.portal-demo-pay-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.portal-demo-pay-desc {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sortable Table Headers */
+.th-sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+.th-sortable:hover {
+  color: var(--accent);
+}
+
+.th-sortable span {
+  vertical-align: middle;
+}
+
+/* Selected Invoice Table Row */
+tr.row-selected {
+  background: var(--accent-tint) !important;
+}
+
+/* Partial Payment Selector Controls */
+.partial-pay-toggle-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.partial-pay-chip {
+  padding: 6px 13px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--line);
+  background: var(--paper-subtle);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.partial-pay-chip:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.partial-pay-chip.is-active {
+  background: var(--accent-tint);
+  color: var(--accent);
+  border-color: var(--accent-tint-border);
+  font-weight: 700;
+}
+
+.pct-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.pct-chip {
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.pct-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-tint);
+}
+
+/* Partial Payment Badges & Balance Cell */
+.badge-partial {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309 !important;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--radius-full, 9999px);
+  margin-left: 6px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+[data-theme="dark"] .badge-partial {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d !important;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.invoice-amount-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.invoice-remaining-val {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.invoice-original-sub {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 1px;
+  white-space: nowrap;
+}
+
+.invoice-modal-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s, 8px);
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modal-breakdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-breakdown-label {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.modal-breakdown-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+
+

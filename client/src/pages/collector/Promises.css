@@ -1,0 +1,315 @@
+/* Promises to Pay Page Styling */
+
+.promises-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.promises-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* KPI Grid */
+.promises-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.promises-kpi-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.promises-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--accent);
+}
+
+.promises-kpi-card .kpi-icon {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-s);
+  background: var(--paper-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.promises-kpi-card.kpi-card-danger {
+  border-left: 3px solid var(--danger);
+}
+
+.promises-kpi-card.kpi-card-good {
+  border-left: 3px solid var(--good);
+}
+
+.promises-kpi-card .kpi-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.promises-kpi-card .kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.promises-kpi-card .kpi-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Toolbar & Tabs */
+.promises-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  border-radius: var(--radius-m);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-xs);
+}
+
+.promises-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--paper-subtle);
+  padding: 3px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line);
+}
+
+.promises-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.promises-tab:hover {
+  color: var(--ink);
+}
+
+.promises-tab.active {
+  background: var(--paper-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow-xs);
+}
+
+.promises-tab .tab-pill {
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--paper-hover);
+  color: var(--ink-faint);
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+.promises-tab.active .tab-pill {
+  background: var(--accent-tint);
+  color: var(--accent-strong);
+}
+
+.promises-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 260px;
+}
+
+.promises-search-wrap .search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+.promises-search-input {
+  width: 100%;
+  padding: 7px 32px 7px 34px;
+  font-size: 13px;
+  font-family: var(--font-ui);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--paper-raised);
+  color: var(--ink);
+  transition: all 0.15s ease;
+}
+
+.promises-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2.5px rgba(15, 118, 110, 0.18);
+  outline: none;
+}
+
+/* Table */
+.promises-table-wrap {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+}
+
+.promises-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.promises-table th {
+  background: var(--paper-subtle);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.promises-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  vertical-align: middle;
+}
+
+.promises-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.promises-row {
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.promises-row:hover {
+  background: rgba(241, 245, 249, 0.7);
+}
+
+.ptp-account-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ptp-account-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.ptp-account-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
+.ptp-amount {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.ptp-creator {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.ptp-actions-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-quiet-good {
+  color: var(--good-strong);
+}
+
+.btn-quiet-good:hover {
+  background: var(--good-tint);
+  color: var(--good-strong);
+}
+
+.ptp-account-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ptp-owner-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--radius-s, 4px);
+  background: rgba(99, 102, 241, 0.12);
+  color: #6366f1;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.ptp-direct-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: var(--radius-s, 4px);
+  background: var(--paper-subtle, #f1f5f9);
+  color: var(--ink-soft, #64748b);
+}
+
+.ptp-owner-restricted-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: var(--radius-s, 4px);
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  cursor: default;
+}

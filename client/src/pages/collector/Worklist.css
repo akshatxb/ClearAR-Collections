@@ -1,0 +1,421 @@
+/* Worklist Queue Triage Strip */
+.queue-triage-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1200px) {
+  .queue-triage-strip {
+    grid-template-columns: repeat(4, 1fr) minmax(210px, 1.35fr);
+  }
+}
+
+.triage-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.triage-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.triage-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  background: var(--paper-subtle);
+  flex-shrink: 0;
+}
+
+.triage-icon-danger {
+  background: var(--danger-tint);
+}
+
+.triage-icon-warning {
+  background: var(--warning-tint);
+}
+
+.triage-icon-aging {
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.triage-icon-hold {
+  background: rgba(225, 29, 72, 0.12);
+}
+
+.triage-icon-accent {
+  background: var(--accent-tint);
+}
+
+.triage-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.triage-value {
+  font-size: clamp(17px, 1.6vw, 24px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.triage-label {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  margin-top: 2px;
+}
+
+.triage-card-balance .triage-value {
+  font-size: clamp(15px, 1.4vw, 20px);
+  letter-spacing: -0.02em;
+  color: var(--accent-strong);
+}
+
+/* Worklist Filters & Search */
+.worklist-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 14px 18px;
+  border-radius: var(--radius-m);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-xs);
+}
+
+.worklist-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 240px;
+  flex: 1;
+}
+
+.worklist-search-wrap .search-icon {
+  position: absolute;
+  left: 11px;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+.worklist-search-input {
+  width: 100%;
+  height: 36px;
+  padding: 7px 32px 7px 34px;
+  font-size: 13px;
+  font-family: var(--font-ui);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--paper-raised);
+  color: var(--ink);
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.worklist-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2.5px rgba(15, 118, 110, 0.18);
+  outline: none;
+}
+
+.worklist-search-wrap .search-clear-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: var(--radius-full);
+}
+
+.worklist-search-wrap .search-clear-btn:hover {
+  color: var(--ink);
+  background: var(--paper-subtle);
+}
+
+.worklist-filters label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.worklist-filters select {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  height: 36px;
+  line-height: 1.4;
+  padding: 7px 34px 7px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background-color: var(--paper-raised);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 11px center;
+  box-shadow: var(--shadow-xs);
+  box-sizing: border-box;
+  min-width: 124px;
+}
+
+.worklist-filters select:hover {
+  border-color: var(--line-hover);
+}
+
+.worklist-filters select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2.5px rgba(15, 118, 110, 0.18);
+  outline: none;
+}
+
+.worklist-mine-toggle {
+  margin-left: auto;
+  cursor: pointer;
+  user-select: none;
+}
+
+.worklist-mine-toggle input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Table Container */
+.worklist-table-wrap {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease;
+}
+
+.worklist-table-wrap:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.worklist-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.worklist-table th {
+  background: var(--paper-subtle);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.worklist-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  vertical-align: middle;
+}
+
+.worklist-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.worklist-row {
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.worklist-row:hover {
+  background: rgba(241, 245, 249, 0.7);
+}
+
+.worklist-account-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Sortable table headers */
+.sortable-th {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.12s ease;
+}
+
+.sortable-th:hover {
+  background: var(--paper-hover) !important;
+  color: var(--ink);
+}
+
+.th-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.th-content-right {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.sort-indicator {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.sortable-th:hover .sort-indicator {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Account cell with contact metadata */
+.worklist-account-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.worklist-account-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.worklist-account-contact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
+.contact-divider {
+  color: var(--line-strong);
+}
+
+.hold-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--danger-strong);
+  background: var(--danger-tint);
+  border: 1px solid var(--danger-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.worklist-ownership {
+  text-transform: capitalize;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.worklist-score {
+  font-weight: 700;
+  color: var(--accent-strong);
+  font-size: 14px;
+}
+
+.worklist-open-link {
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: var(--radius-s);
+  background: transparent;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+.worklist-row:hover .worklist-open-link {
+  background: var(--accent-tint);
+  color: var(--accent-strong);
+}
+
+.worklist-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.select-col {
+  width: 44px;
+  text-align: center;
+  padding-left: 16px !important;
+}
+
+.select-col input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.import-error-list {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--danger);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+}

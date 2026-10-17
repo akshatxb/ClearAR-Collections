@@ -1,0 +1,272 @@
+/* ---- Compose & Send Email Modal (ClearAR Design System) ---- */
+
+.compose-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Account Context Banner */
+.compose-account-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+}
+
+.compose-account-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.compose-account-icon {
+  color: var(--accent);
+}
+
+.compose-account-meta strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.compose-account-id-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Quick Templates Section */
+.compose-template-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-tint-border);
+  border-radius: var(--radius-m);
+}
+
+.compose-template-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.compose-template-icon {
+  color: var(--accent);
+}
+
+.compose-template-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.compose-template-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--paper-raised);
+  border: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.compose-template-pill:hover {
+  background: var(--paper-hover);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.compose-template-pill.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 2px 6px var(--accent-glow);
+}
+
+/* Labels & Hints */
+.compose-field-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.field-required {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.compose-body-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.compose-body-hint {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+
+/* Input Wrappers with Icons */
+.compose-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.compose-input-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--ink-faint);
+  pointer-events: none;
+  transition: color 0.15s ease;
+}
+
+.compose-input-wrapper:focus-within .compose-input-icon {
+  color: var(--accent);
+}
+
+.compose-input {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  padding: 9px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--paper-raised);
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.compose-input.with-icon {
+  padding-left: 36px;
+}
+
+.compose-input:hover {
+  border-color: var(--line-hover);
+}
+
+.compose-input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Textarea */
+.compose-textarea {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  line-height: 1.6;
+  padding: 10px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--paper-raised);
+  color: var(--ink);
+  resize: vertical;
+  min-height: 140px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.compose-textarea:hover {
+  border-color: var(--line-hover);
+}
+
+.compose-textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Select Control */
+.compose-select {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  padding: 9px 34px 9px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background-color: var(--paper-raised);
+  color: var(--ink);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-xs);
+}
+
+.compose-select:hover {
+  border-color: var(--line-hover);
+}
+
+.compose-select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Attachment Badge */
+.compose-attachment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-s);
+  background: var(--paper-subtle);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.compose-attachment-badge strong {
+  color: var(--ink);
+}
+
+/* Error Box */
+.compose-error-box {
+  background: var(--danger-tint);
+  border: 1px solid var(--danger-border);
+  border-radius: var(--radius-s);
+  padding: 8px 12px;
+  margin-top: 2px;
+}
+
+/* Footer Actions */
+.compose-actions {
+  margin-top: 16px;
+}
